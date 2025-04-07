@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campus Event Portal</title>
+  <link rel="stylesheet" href="index1.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Campus Event Portals</h1>
+    <p class="subtitle">Sign in to access your dashboard</p>
+
+    <p class="role-title">Select your role</p>
+    <div class="roles">
+      <div class="role" onclick="redirectTo('student.html')">
+        <span class="icon">👤</span> Student
+      </div>
+      <div class="role" onclick="redirectTo('faculty.html')">
+        <span class="icon">👤</span> Faculty
+      </div>
+      <div class="role" onclick="redirectTo('club.html')">
+        <span class="icon">👤</span> Club Admin
+      </div>
+    </div>
+
+    <form class="login-form">
+      <input type="text" placeholder="Username or Student ID" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Sign In</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
