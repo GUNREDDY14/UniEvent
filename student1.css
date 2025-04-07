@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f9fafc;
+    padding: 20px;
+    color: #333;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .logout {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+  }
+  
+  .dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    padding: 20px;
+    flex: 1 1 30%;
+    min-width: 300px;
+  }
+  
+  .card h2 {
+    margin-bottom: 15px;
+  }
+  
+  .event {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  .event-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .date {
+    background: #e5e8f1;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    color: #333;
+  }
+  
+  .tag {
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    color: white;
+  }
+  
+  .tag.tech {
+    background: #5c8eff;
+  }
+  
+  .tag.sports {
+    background: #4ad991;
+  }
+  
+  .tag.career {
+    background: #b765f9;
+  }
+  
+  .avatar {
+    border-radius: 50%;
+    width: 100px;
+    margin: 10px auto;
+    display: block;
+  }
+  
+  .profile h3 {
+    text-align: center;
+    margin: 10px 0 0;
+  }
+  
+  .student-id {
+    text-align: center;
+    color: #777;
+    margin-bottom: 15px;
+  }
+  
+  .info h4 {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .info p {
+    font-size: 0.85rem;
+    margin: 4px 0;
+    color: #555;
+  }
+  
+  .club-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .club-card img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  
+  .club-details h3 {
+    margin-top: 8px;
+  }
+  
+  .club-details .desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 8px 0;
+  }
+  
+  .join-btn {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background: white;
+    border: 1.5px solid #ccc;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .join-btn:hover {
+    background: #eef1f9;
+  }
+  
