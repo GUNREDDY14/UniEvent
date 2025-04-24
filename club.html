@@ -4,54 +4,90 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Club Head Dashboard</title>
-  <link rel="stylesheet" href="club.css" />
+  <link rel="stylesheet" href="css/club.css" />
 </head>
 <body>
 
   <!-- Navbar -->
   <div class="navbar">
     <h1>Club Head Dashboard</h1>
-    <button class="logout">🔗 Logout</button>
+    <a href="index.html" class="logout">Logout</a>
   </div>
 
   <!-- Main Container -->
   <div class="container">
 
-    <!-- Club Info Cards -->
-    <div class="grid">
+    <!-- 2x2 Dashboard Grid -->
+    <div class="dashboard-2col">
+
+      <!-- Top Left: Club Info -->
       <div class="card">
         <h2>Club</h2>
         <p class="number">Drama Club</p>
         <p class="subtext">Head: Priya Sharma</p>
-      </div>
-      <div class="card">
-        <h2>Submitted Events</h2>
+        <p class="number">Submitted Events</p>
         <p class="number">3</p>
         <p class="subtext">Including pending and approved</p>
       </div>
+
+      <!-- Bottom Left: Submit Event -->
+      <div class="card">
+        <h2>Submit Event Request</h2>
+        <form class="event-form" enctype="multipart/form-data">
+          <label>Event Name:</label>
+          <input type="text" required />
+
+          <label>Date:</label>
+          <input type="date" required />
+
+          <label>Event Note:</label>
+          <textarea rows="4" required placeholder="Explain event purpose, plan, etc."></textarea>
+
+          <label>Upload Document:</label>
+          <input type="file" accept=".pdf,.doc,.docx" required />
+
+          <button type="submit">📤 Submit Request</button>
+        </form>
+      </div>
+
+      <!-- Bottom Right: Timeline -->
+      <div class="card status-tracker">
+        <h2>Event Approval Timeline</h2>
+        <div class="timeline">
+
+          <div class="event-item">
+            <h3>Theatre Night</h3>
+            <div class="timeline-bar">
+              <div class="step done"><div class="circle">1</div><p>Request Sent</p></div>
+              <div class="step done"><div class="circle">2</div><p>Mentor Approved</p></div>
+              <div class="step done"><div class="circle">3</div><p>Management Approved</p></div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <h3>Street Play</h3>
+            <div class="timeline-bar">
+              <div class="step done"><div class="circle">1</div><p>Request Sent</p></div>
+              <div class="step done"><div class="circle">2</div><p>Mentor Approved</p></div>
+              <div class="step pending"><div class="circle">3</div><p>Awaiting Management</p></div>
+            </div>
+          </div>
+
+          <div class="event-item">
+            <h3>Stage Setup</h3>
+            <div class="timeline-bar">
+              <div class="step done"><div class="circle">1</div><p>Request Sent</p></div>
+              <div class="step pending"><div class="circle">2</div><p>Awaiting Mentor</p></div>
+              <div class="step pending"><div class="circle">3</div><p>Pending</p></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
-    <!-- Event Submission Form -->
-    <div class="card">
-      <h2>Submit Event Request</h2>
-      <form class="event-form" enctype="multipart/form-data">
-        <label>Event Name:</label>
-        <input type="text" required />
-
-        <label>Date:</label>
-        <input type="date" required />
-
-        <label>Event Note:</label>
-        <textarea rows="4" required placeholder="Explain event purpose, plan, etc."></textarea>
-
-        <label>Upload Document:</label>
-        <input type="file" accept=".pdf,.doc,.docx" required />
-
-        <button type="submit">📤 Submit Request</button>
-      </form>
-    </div>
-
-    <!-- Submitted Events Table -->
+    <!-- Optional Table Below -->
     <div class="card">
       <h2>Submitted Events</h2>
       <table>
@@ -88,67 +124,6 @@
           </tr>
         </tbody>
       </table>
-    </div>
-
-    <!-- Modern Event Timeline -->
-    <div class="card status-tracker">
-      <h2>Event Approval Timeline</h2>
-
-      <div class="timeline">
-        <div class="event-item">
-          <h3>Theatre Night</h3>
-          <div class="timeline-bar">
-            <div class="step done">
-              <div class="circle">1</div>
-              <p>Request Sent</p>
-            </div>
-            <div class="step done">
-              <div class="circle">2</div>
-              <p>Mentor Approved</p>
-            </div>
-            <div class="step done">
-              <div class="circle">3</div>
-              <p>Management Approved</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="event-item">
-          <h3>Street Play</h3>
-          <div class="timeline-bar">
-            <div class="step done">
-              <div class="circle">1</div>
-              <p>Request Sent</p>
-            </div>
-            <div class="step done">
-              <div class="circle">2</div>
-              <p>Mentor Approved</p>
-            </div>
-            <div class="step pending">
-              <div class="circle">3</div>
-              <p>Awaiting Management</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="event-item">
-          <h3>Stage Setup</h3>
-          <div class="timeline-bar">
-            <div class="step done">
-              <div class="circle">1</div>
-              <p>Request Sent</p>
-            </div>
-            <div class="step pending">
-              <div class="circle">2</div>
-              <p>Awaiting Mentor</p>
-            </div>
-            <div class="step pending">
-              <div class="circle">3</div>
-              <p>Pending</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
   </div>
