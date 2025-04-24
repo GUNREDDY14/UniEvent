@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unievent Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="header">
+    <h1>Unievent</h1>
+    <p>Manage. Approve. Celebrate Campus Events.</p>
+  </div>
+
+  <div class="login-container">
+    <h2>Login</h2>
+
+    <input type="text" id="username" placeholder="Username" />
+    <div id="username-error" class="error-msg"></div>
+
+    <input type="password" id="password" placeholder="Password" />
+    <div id="password-error" class="error-msg"></div>
+
+    <select id="role">
+      <option value="" disabled selected>Select Role</option>
+      <option value="student">Student</option>
+      <option value="club_head">Club Head</option>
+      <option value="faculty">Faculty</option>
+      <option value="management">Management</option>
+    </select>
+    <div id="role-error" class="error-msg"></div>
+
+    <button onclick="login()">Login</button>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username');
+      const password = document.getElementById('password');
+      const role = document.getElementById('role');
+
+      const usernameError = document.getElementById('username-error');
+      const passwordError = document.getElementById('password-error');
+      const roleError = document.getElementById('role-error');
+
+      let hasError = false;
+
+      // Clear previous messages
+      usernameError.textContent = '';
+      passwordError.textContent = '';
+      roleError.textContent = '';
+
+      username.classList.remove('input-error');
+      password.classList.remove('input-error');
+      role.classList.remove('input-error');
+
+      // Validate
+      if (username.value.trim() === '') {
+        usernameError.textContent = 'Please enter your username.';
+        username.classList.add('input-error');
+        hasError = true;
+      }
+
+      if (password.value.trim() === '') {
+        passwordError.textContent = 'Please enter your password.';
+        password.classList.add('input-error');
+        hasError = true;
+      }
+
+      if (role.value === '') {
+        roleError.textContent = 'Please select your role.';
+        role.classList.add('input-error');
+        hasError = true;
+      }
+
+      if (!hasError) {
+        switch (role.value) {
+          case 'student':
+            window.location.href = 'student.html';
+            break;
+          case 'club_head':
+            window.location.href = 'club.html';
+            break;
+          case 'faculty':
+            window.location.href = 'faculty.html';
+            break;
+          case 'management':
+            window.location.href = 'management.html';
+            break;
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
