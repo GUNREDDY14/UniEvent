@@ -4,62 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty Dashboard</title>
-    <link rel="stylesheet" href="faculty.css">
+    <link rel="stylesheet" href="css/faculty.css">
 </head>
 <body>
 
     <!-- Navbar -->
     <div class="navbar">
         <h1>Faculty Dashboard</h1>
-        <button class="logout">🔗 Logout</button>
+        <a href="index.html" class="logout">Logout</a>
     </div>
 
-    <!-- Dashboard Content -->
+    <!-- Content -->
     <div class="container">
-        
-        <!-- Top Stats -->
+
+        <!-- Overview -->
         <div class="grid">
             <div class="card">
-                <h2>Total Students</h2>
-                <p class="number">1,452</p>
-                <p class="subtext">+43 from last semester</p>
+                <h2>Assigned Club</h2>
+                <p class="number">Drama Club</p>
+                <p class="subtext">Cultural Activities</p>
             </div>
-
             <div class="card">
-                <h2>Upcoming Classes</h2>
-                <p class="number">8</p>
-                <p class="subtext">Next: Advanced Algorithms (30m)</p>
-            </div>
-
-            <div class="card">
-                <h2>Departments</h2>
-                <p class="number">6</p>
-                <p class="subtext">Computer Science, Engineering, ...</p>
-            </div>
-
-            <div class="card">
-                <h2>Pending Approvals</h2>
-                <p class="number">12</p>
-                <p class="subtext">Event requests and club formations</p>
+                <h2>Pending Events</h2>
+                <p class="number">2</p>
+                <p class="subtext">Awaiting your approval</p>
             </div>
         </div>
 
-        <!-- Recent Events & Student Reports -->
-        <div class="grid grid-2">
-            <div class="card">
-                <h2>Recent Events</h2>
-                <p class="subtext">Events requiring faculty oversight</p>
-                <p class="note">Faculty dashboard content will be expanded in future updates.</p>
-            </div>
-
-            <div class="card">
-                <h2>Student Reports</h2>
-                <p class="subtext">Academic performance overview</p>
-                <p class="note">Reports will be displayed here.</p>
-            </div>
+        <!-- Event Approval Table -->
+        <div class="card">
+            <h2>Event Approvals – Drama Club</h2>
+            <p class="subtext">Only events from your assigned clubs are shown</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Date</th>
+                        <th>Note</th>
+                        <th>Document</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Theatre Night</td>
+                        <td>2025-05-20</td>
+                        <td>Annual student performance featuring drama skits.</td>
+                        <td><a href="documents/theatre_night_plan.pdf" target="_blank">📎 View Doc</a></td>
+                        <td>
+                            <button>✅ Approve</button>
+                            <button class="reject">❌ Reject</button>
+                            <button class="resend-btn" onclick="toggleResend(this)">🔁 Resend</button>
+                            <div class="resend-box">
+                                <input type="text" placeholder="Enter required changes...">
+                                <button class="send-feedback">📨 Send Feedback</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Street Play Auditions</td>
+                        <td>2025-04-15</td>
+                        <td>Auditions for upcoming inter-college drama contest.</td>
+                        <td><a href="documents/street_play_plan.pdf" target="_blank">📎 View Doc</a></td>
+                        <td>
+                            <button>✅ Approve</button>
+                            <button class="reject">❌ Reject</button>
+                            <button class="resend-btn" onclick="toggleResend(this)">🔁 Resend</button>
+                            <div class="resend-box">
+                                <input type="text" placeholder="Enter required changes...">
+                                <button class="send-feedback">📨 Send Feedback</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
     </div>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleResend(button) {
+            const box = button.nextElementSibling;
+            box.style.display = box.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management Dashboard</title>
+    <link rel="stylesheet" href="css/management.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>Management Dashboard</h1>
+        <a href="index.html" class="logout">Logout</a>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="container">
+        
+        <!-- Top Overview -->
+        <div class="grid">
+            <div class="card">
+                <h2>Total Clubs</h2>
+                <p class="number">28</p>
+                <p class="subtext">Including academic, cultural, tech, etc.</p>
+            </div>
+
+            <div class="card">
+                <h2>Pending Permissions</h2>
+                <p class="number">5</p>
+                <p class="subtext">Awaiting management approval</p>
+            </div>
+
+            <div class="card">
+                <h2>Approved Events</h2>
+                <p class="number">64</p>
+                <p class="subtext">This semester</p>
+            </div>
+
+            <div class="card">
+                <h2>Faculty Advisors</h2>
+                <p class="number">19</p>
+                <p class="subtext">Assigned to various clubs</p>
+            </div>
+        </div>
+
+        <!-- Club Permissions Table -->
+        <div class="grid grid-2">
+            <div class="card">
+                <h2>Club Permissions</h2>
+                <p class="subtext">Manage club approval requests</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Club</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AI Society</td>
+                            <td>Technical</td>
+                            <td>Pending</td>
+                            <td>
+                                <p><strong>Note:</strong> Proposal for AI workshop series in May.</p>
+                                <a href="documents/ai_society_proposal.pdf" target="_blank">📎 View Document</a><br><br>
+                                <button>✅ Approve</button>
+                                <button class="reject">❌ Reject</button>
+                                <button class="resend-btn" onclick="toggleResend(this)">🔁 Resend</button>
+                                <div class="resend-box">
+                                    <input type="text" placeholder="Enter required changes...">
+                                    <button class="send-feedback">📨 Send Feedback</button>
+                                </div>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Drama Club</td>
+                            <td>Cultural</td>
+                            <td>Approved</td>
+                            <td>
+                                <p><strong>Note:</strong> Annual theatre night event held in June.</p>
+                                <a href="documents/drama_club_event_details.pdf" target="_blank">📎 View Document</a><br><br>
+                                <button disabled>✅ Approved</button>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>Entrepreneurs United</td>
+                            <td>Business</td>
+                            <td>Pending</td>
+                            <td>
+                                <p><strong>Note:</strong> Requesting permission for startup showcase event.</p>
+                                <a href="documents/entrepreneurs_event_pitch.pdf" target="_blank">📎 View Document</a><br><br>
+                                <button>✅ Approve</button>
+                                <button class="reject">❌ Reject</button>
+                                <button class="resend-btn" onclick="toggleResend(this)">🔁 Resend</button>
+                                <div class="resend-box">
+                                    <input type="text" placeholder="Enter required changes...">
+                                    <button class="send-feedback">📨 Send Feedback</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
+            </div>
+
+            <div class="card">
+                <h2>Notes</h2>
+                <p class="subtext">Instructions for management</p>
+                <p class="note">Use the "Approve" button to grant permissions to clubs. If not ready, use "Resend" to request changes or "Reject" to deny the request.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        function toggleResend(button) {
+            const box = button.nextElementSibling;
+            box.style.display = box.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+</html>

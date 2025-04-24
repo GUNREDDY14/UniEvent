@@ -1,153 +1,184 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Base */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f5f7fa;
+}
+
+/* Header */
+.header {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.title {
+  font-size: 28px;
+  margin: 0 auto;
+}
+
+.logout {
+  color: white;
+  text-decoration: none;
+  background-color: #333;
+  border-radius: 25%;
+  padding: 5px;
+  font-size: 14px;
+  margin-left: auto;
+}
+
+
+.profile-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-inline .avatar {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.student-id {
+  font-size: 13px;
+  color: white;
+  opacity: 0.85;
+}
+
+/* Main Dashboard */
+.dashboard {
+  padding: 20px;
+}
+
+.dashboard-2col {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Ensures the cards are spaced evenly */
+}
+
+/* Ensure the cards for the calendar and clubs take up exactly half of the available space */
+.dashboard-2col .card {
+  flex: 0 0 45%; /* Take up 48% width each */
+  max-width: 45%;
+  /* Prevents cards from growing beyond 48% width */
+  min-width: 300px; /* Keeps a reasonable minimum width for readability */
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Calendar */
+.card.calendar {
+  position: relative;
+  z-index: 1;
+}
+
+#calendar {
+  margin-top: 10px;
+  z-index: 1;
+  position: relative;
+}
+
+.event-list {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.event-list h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.event-list ul {
+  padding-left: 20px;
+}
+
+.event-list li {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* Clubs */
+.club-card {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.club-card img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.club-details {
+  flex: 1;
+}
+
+.tag {
+  padding: 3px 8px;
+  background-color: #007bff;
+  color: white;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.join-btn {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.join-btn:hover {
+  background-color: #218838;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .dashboard-2col {
+    flex-direction: column; /* Stacks the cards vertically on smaller screens */
   }
-  
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f9fafc;
-    padding: 20px;
-    color: #333;
+
+  .dashboard-2col .card {
+    width: 100%; /* Cards will take full width */
+    max-width: 100%; /* Ensures cards expand to fill the available space */
   }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .logout {
-    text-decoration: none;
-    color: #333;
-    font-size: 0.9rem;
-  }
-  
-  .dashboard {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-  }
-  
-  .card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    padding: 20px;
-    flex: 1 1 30%;
-    min-width: 300px;
-  }
-  
-  .card h2 {
-    margin-bottom: 15px;
-  }
-  
-  .event {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-  }
-  
-  .event-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 8px;
-  }
-  
-  .date {
-    background: #e5e8f1;
-    border-radius: 8px;
-    padding: 4px 8px;
-    font-size: 0.75rem;
-    color: #333;
-  }
-  
-  .tag {
-    padding: 3px 8px;
-    border-radius: 10px;
-    font-size: 0.75rem;
-    color: white;
-  }
-  
-  .tag.tech {
-    background: #5c8eff;
-  }
-  
-  .tag.sports {
-    background: #4ad991;
-  }
-  
-  .tag.career {
-    background: #b765f9;
-  }
-  
-  .avatar {
-    border-radius: 50%;
-    width: 100px;
-    margin: 10px auto;
-    display: block;
-  }
-  
-  .profile h3 {
-    text-align: center;
-    margin: 10px 0 0;
-  }
-  
-  .student-id {
-    text-align: center;
-    color: #777;
-    margin-bottom: 15px;
-  }
-  
-  .info h4 {
-    margin-top: 15px;
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  .info p {
-    font-size: 0.85rem;
-    margin: 4px 0;
-    color: #555;
-  }
-  
-  .club-card {
-    display: flex;
+
+  .profile-inline {
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-start;
   }
-  
-  .club-card img {
-    width: 100%;
-    border-radius: 12px;
-    object-fit: cover;
-  }
-  
-  .club-details h3 {
-    margin-top: 8px;
-  }
-  
-  .club-details .desc {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 8px 0;
-  }
-  
-  .join-btn {
+
+  .logout {
     margin-top: 10px;
-    padding: 10px;
+    text-align: right;
     width: 100%;
-    background: white;
-    border: 1.5px solid #ccc;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.2s;
   }
-  
-  .join-btn:hover {
-    background: #eef1f9;
+
+  .club-card {
+    flex-direction: column;
+    align-items: center;
   }
-  
+}
