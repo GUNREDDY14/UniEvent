@@ -47,7 +47,8 @@ UniEvent is a web-based platform designed to streamline the management, approval
 
  3.  bash npm start 
 
- 4. http://localhost:5000    to open the application in your browser. 
+ 4. http://localhost:5000    to open the application in your browser.
+ 5. Incase of error (local host access denied) - change the port number to 3000 in server.js file.  then redo from step 2. make sure to stop the 5000 server runnning before you follow this step.
 
 PROJECT STRUCTURE
 
