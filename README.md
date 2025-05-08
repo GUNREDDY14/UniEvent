@@ -3,6 +3,8 @@ PPT LINK - https://www.canva.com/design/DAGmwjCOfQY/9ShMA6Bvud2cZ1NeUy7tfg/edit?
 
 SCREEN-RECORDING OF THE WORKING WEBSITE -  https://mahindraecolecentrale-my.sharepoint.com/:v:/g/personal/se22ucse105_mahindrauniversity_edu_in/EeIK9qC43-xKtazp_yuX2lMB14aMW4NOu7kG9cPq-UySRQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=IR2hTA
 
+TEAM PRESENTATION LINK -  https://mahindraecolecentrale-my.sharepoint.com/:v:/g/personal/se22ucse105_mahindrauniversity_edu_in/EfJlN0jtQxZDtXfEurjY5I0B8-DYEy0sQrLinPpy5PM5ag?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=04QbQF
+
 
 # UniEvent
 
