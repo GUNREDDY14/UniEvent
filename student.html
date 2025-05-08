@@ -6,117 +6,68 @@
   <title>Student Dashboard</title>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/student1.css" />
+  <link rel="stylesheet" href="css/student.css" />
 
-  <!-- FullCalendar CSS & JS -->
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- FullCalendar CSS -->
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
 </head>
 <body>
+  <!-- Sidebar & Toggle -->
+  <div class="main_box">
+    <input type="checkbox" id="check" />
+    <div class="btn_one">
+      <label for="check"><i class="fa-solid fa-bars"></i></label>
+    </div>
 
-  <!-- Header with Profile -->
-  <header class="header">
-    <div class="profile-inline">
-      <img src="C:\Users\Akash\OneDrive\Pictures\Screenshots\karthik.jpg" class="avatar" />
-      <div>
-        <h2>Alex Johnson</h2>
-        <p class="student-id">SE22UCSE284</p>
+    <div class="sidebar_menu">
+      <div class="logo"><a href="#">UniEvent</a></div>
+      <div class="btn_two"><label for="check"><i class="fa-solid fa-xmark"></i></label></div>
+      <div class="menu">
+        <ul>
+          <li><i class="fa-solid fas fa-user"></i><a href="profile.html">Profile</a></li>
+          <li><i class="fa-solid fa-users"></i><a href="clubs.html">Clubs</a></li>
+          <li><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="index.html">Logout</a></li>
+        </ul>
       </div>
     </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
     <h1 class="title">Student Dashboard</h1>
-    <a href="index.html" class="logout">Logout</a>
   </header>
 
   <!-- Main Section -->
   <main class="dashboard dashboard-2col">
-    <!-- Calendar -->
+    <!-- Calendar and Event List -->
     <section class="card calendar">
       <h2>📅 Event Calendar</h2>
-      <div id="calendar"></div>
-      <div id="event-list" class="event-list"></div>
-    </section>
-
-    <!-- Clubs -->
-    <section class="card clubs">
-      <h2>Available Clubs</h2>
-      <div class="club-card">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="Tech Innovators" />
-        <div class="club-details">
-          <h3>Tech Innovators</h3>
-          <span class="tag tech">Technology</span>
-          <p>👥 120 members</p>
-          <p class="desc">A club for tech enthusiasts to collaborate on innovative projects and learn new technologies.</p>
-          <p>📅 Tuesdays ⏰ 18:00 - 20:00</p>
-          <p>📍 Engineering Building, Room 305</p>
-          <button class="join-btn">Join Club</button>
-        </div>
+      <div class="calendar-wrapper">
+        <div id="calendar" class="calendar-box"></div>
+        <div id="event-list" class="event-list-box"></div>
       </div>
     </section>
   </main>
 
-  <!-- FullCalendar Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const calendarEl = document.getElementById('calendar');
-      const eventListEl = document.getElementById('event-list');
+  <!-- Event Modal -->
+  <div id="event-modal" class="event-modal hidden">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p><strong>Date:</strong> <span id="modal-date"></span></p>
+      <p><strong>Time:</strong> <span id="modal-time"></span></p>
+      <p><strong>Venue:</strong> <span id="modal-venue"></span></p>
+      <p><strong>Club:</strong> <span id="modal-club"></span></p>
+      <p><strong>Description:</strong> <span id="modal-description"></span></p>
+    </div>
+  </div>
 
-      const events = [
-        {
-          title: 'ENIGMA Meetup',
-          start: '2025-04-10T14:00:00',
-          end: '2025-04-10T16:00:00',
-          description: '🕒 14:00 - 16:00 • 📍 ECSOE : ELT-1'
-        },
-        {
-          title: 'Football Tournament',
-          start: '2025-04-12T16:00:00',
-          end: '2025-04-12T18:00:00',
-          description: '🕒 16:00 - 18:00 • 📍 Football Calendar'
-        },
-        {
-          title: 'MARC Event',
-          start: '2025-04-13T10:00:00',
-          end: '2025-04-13T15:00:00',
-          description: '🕒 10:00 - 15:00 • 📍 Abdul Kalam Auditorium'
-        }
-      ];
-
-      function renderEventList(start, end) {
-        const visibleEvents = events.filter(e => {
-          const eventDate = new Date(e.start);
-          return eventDate >= start && eventDate < end;
-        });
-
-        if (visibleEvents.length > 0) {
-          eventListEl.innerHTML = '<h3>📋 Events in this view:</h3>' +
-            '<ul>' + visibleEvents.map(ev =>
-              `<li><strong>${ev.title}</strong><br>${ev.description}<br><em>${new Date(ev.start).toDateString()}</em></li>`
-            ).join('') + '</ul>';
-        } else {
-          eventListEl.innerHTML = '<h3>📋 Events in this view:</h3><p>No events scheduled.</p>';
-        }
-      }
-
-      const calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        headerToolbar: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,dayGridWeek,dayGridDay'
-        },
-        height: 'auto',
-        events: events,
-        eventClick: function (info) {
-          alert(info.event.title + '\n' + info.event.extendedProps.description);
-        },
-        datesSet: function (dateInfo) {
-          renderEventList(dateInfo.start, dateInfo.end);
-        }
-      });
-
-      calendar.render();
-    });
-  </script>
-
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+  <script src="student.js"></script>
 </body>
 </html>
