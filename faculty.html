@@ -5,13 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty Dashboard</title>
     <link rel="stylesheet" href="css/faculty.css">
+    <script src="faculty.js"></script> <!-- Linked to your faculty.js file -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 </head>
 <body>
+    <div class="main_box">
+        <input type="checkbox" id="check" />
+        <div class="btn_one">
+          <label for="check">
+            <i class="fa-solid fa-bars"></i>
+          </label>
+        </div>
+    
+        <div class="sidebar_menu">
+          <div class="logo">
+            <a href="#">UniEvent</a>
+          </div>
+          <div class="btn_two">
+            <label for="check">
+              <i class="fa-solid fa-xmark"></i>
+            </label>
+          </div>
+          <div class="menu">
+            <ul>
+              <li><i class="fa-solid fas fa-user"></i><a href="profile.html">Profile</a></li>
+              <li><i class="fa-solid fa-users"></i><a href="clubs.html">Clubs</a></li>
+              <li><i class="fa-solid fa-arrow-right-from-bracket"></i><a href="index.html">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
 
     <!-- Navbar -->
     <div class="navbar">
         <h1>Faculty Dashboard</h1>
-        <a href="index.html" class="logout">Logout</a>
     </div>
 
     <!-- Content -->
@@ -21,12 +51,12 @@
         <div class="grid">
             <div class="card">
                 <h2>Assigned Club</h2>
-                <p class="number">Drama Club</p>
+                <p class="number" id="club-name">Drama Club</p>
                 <p class="subtext">Cultural Activities</p>
             </div>
             <div class="card">
                 <h2>Pending Events</h2>
-                <p class="number">2</p>
+                <p class="number" id="pending-events">0</p>
                 <p class="subtext">Awaiting your approval</p>
             </div>
         </div>
@@ -45,49 +75,12 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Theatre Night</td>
-                        <td>2025-05-20</td>
-                        <td>Annual student performance featuring drama skits.</td>
-                        <td><a href="documents/theatre_night_plan.pdf" target="_blank">📎 View Doc</a></td>
-                        <td>
-                            <button>✅ Approve</button>
-                            <button class="reject">❌ Reject</button>
-                            <button class="resend-btn" onclick="toggleResend(this)">🔁 Resend</button>
-                            <div class="resend-box">
-                                <input type="text" placeholder="Enter required changes...">
-                                <button class="send-feedback">📨 Send Feedback</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Street Play Auditions</td>
-                        <td>2025-04-15</td>
-                        <td>Auditions for upcoming inter-college drama contest.</td>
-                        <td><a href="documents/street_play_plan.pdf" target="_blank">📎 View Doc</a></td>
-                        <td>
-                            <button>✅ Approve</button>
-                            <button class="reject">❌ Reject</button>
-                            <button class="resend-btn" onclick="toggleResend(this)">🔁 Resend</button>
-                            <div class="resend-box">
-                                <input type="text" placeholder="Enter required changes...">
-                                <button class="send-feedback">📨 Send Feedback</button>
-                            </div>
-                        </td>
-                    </tr>
+                <tbody id="events-list">
+                    <!-- Dynamic rows will be inserted here by JavaScript -->
                 </tbody>
             </table>
         </div>
     </div>
-
-    <!-- JavaScript -->
-    <script>
-        function toggleResend(button) {
-            const box = button.nextElementSibling;
-            box.style.display = box.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
 
 </body>
 </html>
