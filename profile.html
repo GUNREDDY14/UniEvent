@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile</title>
+  <link rel="stylesheet" href="css/profile.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>My Profile</h1>
+
+    <!-- Profile Card -->
+    <div class="profile-card">
+      <img id="avatar" src="default.png" alt="Avatar" width="120" height="120" />
+      <div class="details">
+        <p><strong>Name:</strong> <span id="name">Loading...</span></p>
+        <p><strong>Email:</strong> <span id="email">Loading...</span></p>
+        <p><strong>Username:</strong> <span id="username">Loading...</span></p>
+        <button onclick="openEditForm()">Edit Profile</button>
+      </div>
+    </div>
+
+    <!-- Hidden Edit Form -->
+    <div id="edit-form" style="display: none; margin-top: 20px;">
+      <h3>Edit Profile</h3>
+      <form id="edit-profile-form" onsubmit="event.preventDefault(); saveProfile();">
+        <input type="text" id="edit-name" placeholder="Name" required /><br />
+        <input type="email" id="edit-email" placeholder="Email" required /><br />
+        <input type="text" id="edit-username" placeholder="Username" required /><br />
+        <input type="password" id="edit-password" placeholder="New Password (optional)" /><br />
+        <input type="file" id="edit-avatar" accept="image/*" /><br /><br />
+        <button type="submit">Save</button>
+        <button type="button" onclick="cancelEdit()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="profile.js"></script>
+</body>
+</html>

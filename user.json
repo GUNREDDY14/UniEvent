@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "username": "se22ucse288",
+    "password": "pass123",
+    "name": "AVS Akash",
+    "email": "se22ucse288@mahindrauniversity.edu.in",
+    "avatar": "/uploads/1746721086608_akash.jpg",
+    "role": "student"
+  },
+  {
+    "id": 2,
+    "username": "clubhead01",
+    "password": "pass123",
+    "role": "club_head",
+    "name": "Priya Sharma",
+    "email": "priya@example.com",
+    "avatar": "https://i.pravatar.cc/100?img=3",
+    "club": "Drama Club"
+  },
+  {
+    "id": 3,
+    "username": "faculty01",
+    "password": "pass123",
+    "role": "faculty",
+    "name": "Dr. Rajesh Kumar",
+    "email": "rajesh@example.com",
+    "avatar": "https://i.pravatar.cc/100?img=5",
+    "assignedClub": "Drama Club"
+  },
+  {
+    "id": 4,
+    "username": "management01",
+    "password": "pass123",
+    "role": "management",
+    "name": "Ms. Anjali Verma",
+    "email": "anjali@example.com",
+    "avatar": "https://i.pravatar.cc/100?img=8"
+  }
+]
