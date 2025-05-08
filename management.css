@@ -1,44 +1,133 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f8fc;
+    color: #333;
     margin: 0;
-    padding: 0;
 }
 
 /* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background: linear-gradient(to right, #0964c4, #00c6ff);
+    color: white;
     padding: 20px;
-    background-color: #007bff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    top: 0;
+    z-index: 1000;
+    height: 75px;
 }
 
 .navbar h1 {
-    font-size: 24px;
-    margin: 0;
+    font-size: 28px;
+    margin: 0 auto;
 }
 
-.logout {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 25%;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.btn_one label,
+.btn_two label {
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
 }
 
-.logout:hover {
-    background-color: black;
+/* Hide Checkbox */
+#check {
+  display: none;
+}
+
+/* Sidebar */
+.main_box input {
+  display: none;
+}
+
+.btn_one {
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.sidebar_menu {
+  position: fixed;
+  right: -350px;
+  height: 100vh;
+  width: 300px;
+  background: linear-gradient(to bottom, #0964c4, #00c6ff);
+  transition: all 0.3s ease;
+  z-index: 1101;
+}
+
+#check:checked ~ .sidebar_menu {
+  right: 0;
+}
+
+.sidebar_menu .logo {
+  padding: 20px;
+  text-align: center;
+  font-size: 22px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.sidebar_menu .logo a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar_menu .btn_two {
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.sidebar_menu .menu {
+  padding: 20px;
+}
+
+.sidebar_menu .menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar_menu .menu ul li {
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.sidebar_menu .menu ul li a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+  transition: color 0.3s;
+  opacity: 0.7;
+}
+
+.sidebar_menu .menu ul li a:hover {
+  opacity: 1;
+}
+
+.sidebar_menu .menu ul li i {
+  width: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Sidebar Toggle Logic */
+#check:checked ~ .sidebar_menu {
+  right: 0;
 }
 
 /* Container */
 .container {
-    padding: 20px;
+    padding: 30px;
 }
 
 /* Grid Layouts */
@@ -57,10 +146,12 @@ body {
 
 /* Card Styles */
 .card {
-    background-color: white;
+    background: #fff;
+    border-radius: 12px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07);
+    flex: 1 1 45%;
+    min-width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
@@ -74,7 +165,6 @@ body {
     font-size: 18px;
     margin-bottom: 10px;
     color: #333;
-    transition: color 0.3s ease-in-out;
 }
 
 .card:hover h2 {
