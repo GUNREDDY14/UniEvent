@@ -43,9 +43,9 @@ UniEvent is a web-based platform designed to streamline the management, approval
    ```
 
 
- 2. ''' bash npm install '''  or install express.js in the same fodler then run node server.js command. 
+ 2.  npm install   or install express.js in the same fodler then run node server.js command. 
 
- 3. ''' bash npm start '''  
+ 3.  bash npm start 
 
  4. http://localhost:5000    to open the application in your browser. 
 
